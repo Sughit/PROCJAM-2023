@@ -8,6 +8,7 @@ public class Produce : MonoBehaviour
     public GameObject productGO;
     public float timer;
     public bool canTake;
+    public Animator anim;
 
     void OnMouseUp()
     {
@@ -21,6 +22,7 @@ public class Produce : MonoBehaviour
         {
             //sfx si particule
             //animatie
+            anim.SetBool("laMunca", true);
             Debug.Log("Starting to make");
             StartCoroutine(MakeProductTimer());
         }
@@ -35,6 +37,7 @@ public class Produce : MonoBehaviour
         yield return new WaitForSeconds(timer);
         productGO.SetActive(true);
         canTake = true;
+        anim.SetBool("laMunca", false);
         Debug.Log("Finished");
         //sunet finalizat
     }
