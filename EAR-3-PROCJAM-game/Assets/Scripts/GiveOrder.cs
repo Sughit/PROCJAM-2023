@@ -34,6 +34,7 @@ public class GiveOrder : Interactable
         else
         {
             Debug.Log("Incorrect order");
+            DeleteLists();
             generateOrder.MakeOrder();
         }
     }
