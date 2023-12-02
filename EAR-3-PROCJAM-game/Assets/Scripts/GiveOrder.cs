@@ -28,7 +28,7 @@ public class GiveOrder : Interactable
         {
             Debug.Log("Correct order");
             //mai multi bani
-            //DeleteLists();
+            DeleteLists();
             generateOrder.MakeOrder();
         }
         else
@@ -40,9 +40,9 @@ public class GiveOrder : Interactable
 
     void DeleteLists()
     {
-        foreach(var item in ChefInventory.instance.items)
-        {
-            ChefInventory.instance.Remove(item);
-        }
+        ChefInventory.instance.items.Clear();
+        if(ChefInventory.instance.onItemChangedCallback != null)
+            ChefInventory.instance.onItemChangedCallback.Invoke();
+        GenerateOrder.instance.currentOrder.Clear();
     }
 }
