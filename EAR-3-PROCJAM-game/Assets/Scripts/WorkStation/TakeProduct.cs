@@ -31,6 +31,7 @@ public class TakeProduct : Interactable
         {
             inventory.Add(produce.product);
             produce.canTake = false;
+            produce.productGO.SetActive(false);
         }
     }
 }

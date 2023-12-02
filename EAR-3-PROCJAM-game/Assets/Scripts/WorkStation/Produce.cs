@@ -6,7 +6,6 @@ public class Produce : MonoBehaviour
 {
     public Item product;
     public GameObject productGO;
-    // public Transform placeProduct;
     public float timer;
     public bool canTake;
 
@@ -21,6 +20,7 @@ public class Produce : MonoBehaviour
         if(!canTake)
         {
             //sfx si particule
+            //animatie
             Debug.Log("Starting to make");
             StartCoroutine(MakeProductTimer());
         }
