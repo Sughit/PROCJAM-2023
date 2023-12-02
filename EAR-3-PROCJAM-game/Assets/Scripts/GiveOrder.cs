@@ -28,12 +28,21 @@ public class GiveOrder : Interactable
         {
             Debug.Log("Correct order");
             //mai multi bani
+            //DeleteLists();
             generateOrder.MakeOrder();
         }
         else
         {
             Debug.Log("Incorrect order");
             generateOrder.MakeOrder();
+        }
+    }
+
+    void DeleteLists()
+    {
+        foreach(var item in ChefInventory.instance.items)
+        {
+            ChefInventory.instance.Remove(item);
         }
     }
 }
