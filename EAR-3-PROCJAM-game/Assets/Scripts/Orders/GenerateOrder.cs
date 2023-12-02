@@ -36,7 +36,7 @@ public class GenerateOrder : MonoBehaviour
         MakeOrder();
     }
 
-    void MakeOrder()
+    public void MakeOrder()
     {
         //seteaza minimul de ingresiente
         for(int i = 0; i < minItems; i++)
@@ -52,6 +52,14 @@ public class GenerateOrder : MonoBehaviour
                 currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Length)]);
             }
         }
+
+        if(onOrderChangedCallback != null)
+            onOrderChangedCallback.Invoke();
+    }
+
+    public void RemoveItems(Item item)
+    {
+        currentOrder.Remove(item);
 
         if(onOrderChangedCallback != null)
             onOrderChangedCallback.Invoke();
