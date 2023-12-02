@@ -21,7 +21,6 @@ public class Produce : MonoBehaviour
         if(!canTake)
         {
             //sfx si particule
-            //animatie
             anim.SetBool("laMunca", true);
             Debug.Log("Starting to make");
             StartCoroutine(MakeProductTimer());
