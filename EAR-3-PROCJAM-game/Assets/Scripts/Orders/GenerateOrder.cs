@@ -25,7 +25,7 @@ public class GenerateOrder : MonoBehaviour
     public delegate void OnOrderChanged();
     public OnOrderChanged onOrderChangedCallback;
 
-    public Item[] totalItems;
+    public List<Item> totalItems = new List<Item>();
     public List<Item> currentOrder = new List<Item>();
 
     public int minItems;
@@ -41,7 +41,7 @@ public class GenerateOrder : MonoBehaviour
         //seteaza minimul de ingresiente
         for(int i = 0; i < minItems; i++)
         {
-            currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Length)]);
+            currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Count)]);
         }
 
         //sansa de 1 din 5 sa aibe maximul de ingrediente
@@ -49,7 +49,7 @@ public class GenerateOrder : MonoBehaviour
         {
             for(int i = minItems; i < maxItems; i++)
             {
-                currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Length)]);
+                currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Count)]);
             }
         }
 

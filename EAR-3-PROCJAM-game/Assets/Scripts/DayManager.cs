@@ -13,12 +13,22 @@ public class DayManager : MonoBehaviour
     public GameObject dayMenu;
     public GameObject transition;
 
+    public List<GameObject> chefs = new List<GameObject>();
+    public List<Item> ingredients = new List<Item>();
+
+    public GenerateOrder generateOrder;
+
     void Update()
     {
         if(numOrders == maxOrders)
         {
             EndDay();
+            if(numDay % 3 == 0)
+            {
+                maxOrders++;
+            }
         }
+
     }
 
     void EndDay()
@@ -31,6 +41,8 @@ public class DayManager : MonoBehaviour
     public void NextDay()
     {
         dayMenu.SetActive(false);
+        chefs[numDay-1].SetActive(true);
+        generateOrder.totalItems.Add(ingredients[numDay-1]);
         StartCoroutine(Transition());
     }
 
@@ -39,6 +51,6 @@ public class DayManager : MonoBehaviour
         Animator transitionAnim=transition.GetComponent<Animator>();
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Main");
+        // SceneManager.LoadScene("Main");
     }
 }
