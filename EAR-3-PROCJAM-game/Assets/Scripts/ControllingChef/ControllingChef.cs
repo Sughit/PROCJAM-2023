@@ -38,7 +38,7 @@ public class ControllingChef : MonoBehaviour
         }
     }
 
-    void SetFocus(Interactable newFocus/*, Transform newFocusGO*/)
+    public void SetFocus(Interactable newFocus/*, Transform newFocusGO*/)
     {
         if(newFocus != focus)
         {
@@ -53,7 +53,7 @@ public class ControllingChef : MonoBehaviour
         newFocus.OnFocused(transform);
     }
 
-    void RemoveFocus()
+    public void RemoveFocus()
     {
         if(focus != null)
             focus.OnDefocused();
