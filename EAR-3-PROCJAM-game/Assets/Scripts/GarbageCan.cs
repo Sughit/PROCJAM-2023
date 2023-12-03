@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GarbageCan : Interactable
 {
-    public Extinctor ext;
     public override void Interact()
     {
         base.Interact();
@@ -18,13 +17,6 @@ public class GarbageCan : Interactable
             ChefInventory.instance.onItemChangedCallback.Invoke();
     }
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.X))
-        {ext.ext2.SetActive(false);
-
-                Extinctor.luatExt = false;
-                ext.ext.SetActive(true);}
-    }
+    
 
 }
