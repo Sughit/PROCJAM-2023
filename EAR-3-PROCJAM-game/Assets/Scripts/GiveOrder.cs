@@ -29,7 +29,11 @@ public class GiveOrder : Interactable
             Debug.Log("Correct order");
             //mai multi bani
             DeleteLists();
-            generateOrder.MakeOrder();
+            DayManager.numOrders++;
+            if(DayManager.numOrders != DayManager.maxOrders)
+            {
+                generateOrder.MakeOrder();
+            }
         }
         else
         {
