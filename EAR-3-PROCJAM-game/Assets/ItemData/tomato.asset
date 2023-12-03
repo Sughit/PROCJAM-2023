@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: tomato
   m_EditorClassIdentifier: 
   Name: tomato
-  icon: {fileID: 21300000, guid: 5b7f664b515582d458717c354f6be292, type: 3}
+  icon: {fileID: 21300000, guid: ba2e1cfe554a8fa45868901c4fb037c6, type: 3}
