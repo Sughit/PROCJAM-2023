@@ -8,6 +8,7 @@ public class MovingChef : MonoBehaviour
 {
     NavMeshAgent agent;
     Transform target;
+    public Animator anim;
 
     void Start()
     {
@@ -21,6 +22,11 @@ public class MovingChef : MonoBehaviour
             agent.SetDestination(target.position);
             FaceTarget();
         }
+        if(agent.velocity.magnitude <1f)
+            anim.SetBool("mers", false);
+        else
+            anim.SetBool("mers", true);
+
     }
 
     public void MoveToPoint(Vector3 point)

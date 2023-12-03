@@ -20,16 +20,16 @@ public class Produce : MonoBehaviour
     void OnMouseUp()
     {
         Debug.Log("Clicked on ");
-        if(!onFire && !extinguishing)
+        if(!onFire && !extinguishing && !Extinctor.luatExt)
             MakeProduct();
         else
         {
-            if(Extinctor.luatExt && !extinguishing)
+            if(Extinctor.luatExt && !extinguishing && onFire)
             {
+                StartCoroutine(StingereFoc());
                 onFire = false;
                 foc.SetActive(false);
                 anim.SetBool("luatFoc", false);
-                StartCoroutine(StingereFoc());
                 x = 0;
             }
             
