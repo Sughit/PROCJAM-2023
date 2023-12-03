@@ -11,10 +11,17 @@ public class Extinctor : Interactable
     public override void Interact()
     {
         base.Interact();
-
-        ext.SetActive(false);
-        ext2.SetActive(true);
-
-        luatExt = true;
+        if(!luatExt)
+        {
+            ext.SetActive(false);
+            ext2.SetActive(true);
+            luatExt = true;
+        }
+        else
+        {
+            ext2.SetActive(false);
+            ext.SetActive(true);
+            luatExt = false;
+        }
     }
 }
