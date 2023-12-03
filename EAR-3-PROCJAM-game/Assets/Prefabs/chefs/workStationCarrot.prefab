@@ -9790,6 +9790,10 @@ MonoBehaviour:
   timer: 2
   canTake: 0
   anim: {fileID: 8053819593039666114}
+  foc: {fileID: 8285771587163452323}
+  CO2: {fileID: 0}
+  ext: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &2588005781826318937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9805,6 +9809,7 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 2588005781826318934}
   isFocus: 0
+  potiLuaExt: 0
   inventory: {fileID: 0}
 --- !u!1 &8285771587163452323
 GameObject:
@@ -9821,7 +9826,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4693962870855657013
 Transform:
   m_ObjectHideFlags: 0
@@ -9967,6 +9972,14 @@ PrefabInstance:
     - target: {fileID: 4394432654794332195, guid: fe30e786a388fa84ba6788a0418a2ecb, type: 3}
       propertyPath: m_Name
       value: bucatar
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937675817591427307, guid: fe30e786a388fa84ba6788a0418a2ecb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9086032530082146388, guid: fe30e786a388fa84ba6788a0418a2ecb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe30e786a388fa84ba6788a0418a2ecb, type: 3}

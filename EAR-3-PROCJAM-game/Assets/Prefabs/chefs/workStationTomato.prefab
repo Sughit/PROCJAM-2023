@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &368937184051268068
 Transform:
   m_ObjectHideFlags: 0
@@ -5011,6 +5011,10 @@ MonoBehaviour:
   timer: 2
   canTake: 0
   anim: {fileID: 1699558686}
+  foc: {fileID: 1346907335266726605}
+  CO2: {fileID: 0}
+  ext: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &5447166104547043939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5026,6 +5030,7 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 5447166104547043936}
   isFocus: 0
+  potiLuaExt: 0
   inventory: {fileID: 0}
 --- !u!1 &8817336224308825142
 GameObject:

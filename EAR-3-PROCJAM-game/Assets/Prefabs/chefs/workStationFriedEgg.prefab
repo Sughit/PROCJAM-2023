@@ -9675,7 +9675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9082679139330444570
 Transform:
   m_ObjectHideFlags: 0
@@ -9683,7 +9683,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9082679139330444571}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -9744,6 +9744,7 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 9082679139330444570}
   isFocus: 0
+  potiLuaExt: 0
   inventory: {fileID: 0}
 --- !u!1 &9082679139607705427
 GameObject:

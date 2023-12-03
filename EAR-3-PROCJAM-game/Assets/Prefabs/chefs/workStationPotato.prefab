@@ -166,6 +166,10 @@ MonoBehaviour:
   timer: 2
   canTake: 0
   anim: {fileID: 766042081}
+  foc: {fileID: 6372537189814550320}
+  CO2: {fileID: 0}
+  ext: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &1797053789260460285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +185,7 @@ MonoBehaviour:
   radius: 3
   interactionTransform: {fileID: 1797053789260460284}
   isFocus: 0
+  potiLuaExt: 0
   inventory: {fileID: 0}
 --- !u!1 &3665356760614566617
 GameObject:
@@ -5009,7 +5014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6346237090588678504
 Transform:
   m_ObjectHideFlags: 0
