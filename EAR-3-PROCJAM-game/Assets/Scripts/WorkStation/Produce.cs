@@ -16,6 +16,7 @@ public class Produce : MonoBehaviour
     public GameObject CO2;
     public Extinctor ext;
     public GameObject player;
+    public GameObject slider;
 
     void OnMouseUp()
     {
@@ -43,6 +44,9 @@ public class Produce : MonoBehaviour
                 //sfx si particule
                 anim.SetBool("laMunca", true);
                 Debug.Log("Starting to make");
+                slider.SetActive(true); 
+                slider.GetComponent<Timer>().gameTime = timer;
+                slider.GetComponent<Timer>().StartTimer();
                 StartCoroutine(MakeProductTimer());
             }
             else
