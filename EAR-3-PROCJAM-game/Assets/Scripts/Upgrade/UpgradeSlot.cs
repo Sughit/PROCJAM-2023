@@ -21,6 +21,7 @@ public class UpgradeSlot : MonoBehaviour
         if(chef != null)
         {
             Debug.Log("Upgrade " + chef.Name);
+            chef.timeToCook = 1;
         }
     }
 
