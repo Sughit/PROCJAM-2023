@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class UpgradeSlot : MonoBehaviour
 {
     public Image icon;
-    Item chef;
+    ChefStats chef;
 
-    public void AddItem(Item newChef)
+    public void AddItem(ChefStats newChef)
     {
         chef = newChef;
 
@@ -20,7 +20,7 @@ public class UpgradeSlot : MonoBehaviour
     {
         if(chef != null)
         {
-            Debug.Log("Upgrade");
+            Debug.Log("Upgrade " + chef.Name);
         }
     }
 

@@ -10117,6 +10117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 267a68c3eebc7d64fa8109ac4463f444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chefStats: {fileID: 11400000, guid: e6deb50aff844db4e908e05efb4b0153, type: 2}
   product: {fileID: 11400000, guid: 2311c82ad8d4e4a479994af6cf03959b, type: 2}
   productGO: {fileID: 9082679139607705427}
   timer: 2
@@ -10125,6 +10126,7 @@ MonoBehaviour:
   foc: {fileID: 3394201595371097327}
   CO2: {fileID: 0}
   ext: {fileID: 0}
+  chanceToFire: 12
   player: {fileID: 0}
   slider: {fileID: 1570821824}
 --- !u!114 &9082679139330444565

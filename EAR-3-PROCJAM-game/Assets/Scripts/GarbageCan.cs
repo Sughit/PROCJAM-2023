@@ -13,6 +13,7 @@ public class GarbageCan : Interactable
     void DeleteItems()
     {
         ChefInventory.instance.items.Clear();
+        MoneyScript.thrownFood++;
         if(ChefInventory.instance.onItemChangedCallback != null)
             ChefInventory.instance.onItemChangedCallback.Invoke();
     }

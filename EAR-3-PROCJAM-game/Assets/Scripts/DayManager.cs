@@ -51,6 +51,7 @@ public class DayManager : MonoBehaviour
         dayMenu.SetActive(true);
         numOrders = 0;
         numDay++;
+        MoneyScript.instance.CalculateMoney();
     }
 
     public void NextDay()
@@ -66,7 +67,9 @@ public class DayManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         chefs[numDay-1].SetActive(true);
         generateOrder.totalItems.Add(ingredients[numDay-1]);
+        Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
         GetComponent<GenerateOrder>().MakeOrder();
+        MoneyScript.instance.Reset();
         //SceneManager.LoadScene("Main");
     }
 }

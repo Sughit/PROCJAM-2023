@@ -26,9 +26,21 @@ public class Upgrade : MonoBehaviour
 
     public int space = 8;
 
-    public List<Item> chefs = new List<Item>();
+    bool setUpgrade = true;
 
-    public bool Add(Item chef)
+    public List<ChefStats> chefs = new List<ChefStats>();
+
+    void Start()
+    {
+        if(setUpgrade)
+        {
+            if(onUpgradeChangedCallback != null)
+            onUpgradeChangedCallback.Invoke();
+            setUpgrade=false;
+        }
+    }
+
+    public bool Add(ChefStats chef)
     {
         if(chefs.Count >= space)
         {
@@ -43,7 +55,7 @@ public class Upgrade : MonoBehaviour
         return true;
     }
 
-    public void Remove(Item chef)
+    public void Remove(ChefStats chef)
     {
         chefs.Remove(chef);
 

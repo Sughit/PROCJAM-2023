@@ -27,7 +27,7 @@ public class GiveOrder : Interactable
         if(finish.CompareLists())
         {
             Debug.Log("Correct order");
-            //mai multi bani
+            MoneyScript.correctOrders++;
             DeleteLists();
             DayManager.numOrders++;
             if(DayManager.numOrders != DayManager.maxOrders)
@@ -38,6 +38,7 @@ public class GiveOrder : Interactable
         else
         {
             Debug.Log("Incorrect order");
+            MoneyScript.incorrectOrders++;
             DeleteLists();
             generateOrder.MakeOrder();
         }

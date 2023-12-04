@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Produce : MonoBehaviour
 {
+    public ChefStats chefStats;
     public Item product;
     public GameObject productGO;
     public float timer;
+    [HideInInspector]
     public bool canTake;
     public Animator anim;
     public GameObject foc;
@@ -24,6 +26,7 @@ public class Produce : MonoBehaviour
         if(CO2 == null) CO2 = GameObject.Find("bucatarAsamblare/extinctor (1)/particule");
         if(ext == null) ext = GameObject.Find("suport").GetComponent<Extinctor>();
         if(player == null) player = GameObject.Find("bucatarAsamblare");
+        timer=chefStats.timeToCook;
     }
 
     void OnMouseUp()
