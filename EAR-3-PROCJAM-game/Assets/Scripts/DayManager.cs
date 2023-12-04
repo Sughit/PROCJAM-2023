@@ -18,6 +18,21 @@ public class DayManager : MonoBehaviour
 
     public GenerateOrder generateOrder;
 
+    void Awake()
+    {
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
+
+        if (objs.Length > 1)
+        {
+            Destroy(this.gameObject);
+        }
+
+        DontDestroyOnLoad(this.gameObject);
+
+        if(dayMenu == null) dayMenu = GameObject.Find("Canvas/dayMenu");
+        if(transition == null) transition = GameObject.Find("Canvas/transition");
+    }
+
     void Update()
     {
         if(numOrders == maxOrders)
@@ -41,8 +56,6 @@ public class DayManager : MonoBehaviour
     public void NextDay()
     {
         dayMenu.SetActive(false);
-        chefs[numDay-1].SetActive(true);
-        generateOrder.totalItems.Add(ingredients[numDay-1]);
         StartCoroutine(Transition());
     }
 
@@ -51,6 +64,9 @@ public class DayManager : MonoBehaviour
         Animator transitionAnim=transition.GetComponent<Animator>();
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
-        // SceneManager.LoadScene("Main");
+        chefs[numDay-1].SetActive(true);
+        generateOrder.totalItems.Add(ingredients[numDay-1]);
+        GetComponent<GenerateOrder>().MakeOrder();
+        //SceneManager.LoadScene("Main");
     }
 }

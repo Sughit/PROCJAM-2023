@@ -37,7 +37,7 @@ public class MovingChef : MonoBehaviour
     public void FollowTarget(Interactable newTarget)
     {
         //variabile din navMesh
-        agent.stoppingDistance = newTarget.radius * .8f;
+        agent.stoppingDistance = newTarget.radius * .6f;
         agent.updateRotation = false;
 
         target = newTarget.interactionTransform;

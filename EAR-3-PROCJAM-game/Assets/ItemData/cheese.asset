@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: cheese
   m_EditorClassIdentifier: 
   Name: cheese
-  icon: {fileID: 21300000, guid: 6cc5103edc9f0dd4f80e8274c73dfeac, type: 3}
+  icon: {fileID: 21300000, guid: 473081de26e203541bddbc83fecaaf80, type: 3}

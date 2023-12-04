@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: friedEgg
   m_EditorClassIdentifier: 
   Name: friedEgg
-  icon: {fileID: 21300000, guid: e5da66fa63839274dbffb877e43e888b, type: 3}
+  icon: {fileID: 21300000, guid: 63fa670bc50ce3545ba78ffff4b93dba, type: 3}

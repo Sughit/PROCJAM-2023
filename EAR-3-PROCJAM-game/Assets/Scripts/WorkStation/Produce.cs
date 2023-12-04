@@ -15,8 +15,16 @@ public class Produce : MonoBehaviour
     int x;
     public GameObject CO2;
     public Extinctor ext;
+    public int chanceToFire = 12;
     public GameObject player;
     public GameObject slider;
+
+    void Awake()
+    {
+        if(CO2 == null) CO2 = GameObject.Find("bucatarAsamblare/extinctor (1)/particule");
+        if(ext == null) ext = GameObject.Find("suport").GetComponent<Extinctor>();
+        if(player == null) player = GameObject.Find("bucatarAsamblare");
+    }
 
     void OnMouseUp()
     {
@@ -25,7 +33,7 @@ public class Produce : MonoBehaviour
             MakeProduct();
         else
         {
-            if(Extinctor.luatExt && !extinguishing && onFire)
+            if(Extinctor.luatExt && !extinguishing && onFire && Vector3.Distance(player.transform.position, transform.position) <= GetComponent<TakeProduct>().radius)
             {
                 StartCoroutine(StingereFoc());
                 onFire = false;
@@ -57,7 +65,7 @@ public class Produce : MonoBehaviour
 
     IEnumerator MakeProductTimer()
     {
-        x = Random.Range(0,12);
+        x = Random.Range(0,chanceToFire);
         yield return new WaitForSeconds(timer);
         if(x != 1)
         {
