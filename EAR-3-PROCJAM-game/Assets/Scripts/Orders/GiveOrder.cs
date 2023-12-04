@@ -7,6 +7,7 @@ public class GiveOrder : Interactable
 {
     public GenerateOrder generateOrder;
     FinishOrder finish;
+    public GameObject sunetClopotel;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class GiveOrder : Interactable
         {
             Debug.Log("Correct order");
             MoneyScript.correctOrders++;
+            Instantiate(sunetClopotel);
             DeleteLists();
             DayManager.numOrders++;
             if(DayManager.numOrders != DayManager.maxOrders)
