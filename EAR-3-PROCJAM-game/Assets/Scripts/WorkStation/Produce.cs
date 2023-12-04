@@ -20,6 +20,7 @@ public class Produce : MonoBehaviour
     public int chanceToFire = 12;
     public GameObject player;
     public GameObject slider;
+    bool faceMancare;
 
     void Awake()
     {
@@ -32,7 +33,7 @@ public class Produce : MonoBehaviour
     void OnMouseUp()
     {
         Debug.Log("Clicked on ");
-        if(!onFire && !extinguishing && !Extinctor.luatExt)
+        if(!onFire && !extinguishing && !Extinctor.luatExt && !faceMancare)
             MakeProduct();
         else
         {
@@ -68,8 +69,10 @@ public class Produce : MonoBehaviour
 
     IEnumerator MakeProductTimer()
     {
+        faceMancare = true;
         x = Random.Range(0,chanceToFire);
         yield return new WaitForSeconds(timer);
+        faceMancare = false;
         if(x != 1)
         {
             productGO.SetActive(true);

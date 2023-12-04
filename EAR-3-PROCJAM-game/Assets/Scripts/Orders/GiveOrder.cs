@@ -8,6 +8,7 @@ public class GiveOrder : Interactable
     public GenerateOrder generateOrder;
     FinishOrder finish;
     public GameObject sunetClopotel;
+    public Animator anim;
 
     void Start()
     {
@@ -19,6 +20,8 @@ public class GiveOrder : Interactable
         base.Interact();
 
         Give();
+        Instantiate(sunetClopotel);
+        anim.SetTrigger("clopotel");
     }
 
     void Give()
@@ -29,7 +32,6 @@ public class GiveOrder : Interactable
         {
             Debug.Log("Correct order");
             MoneyScript.correctOrders++;
-            Instantiate(sunetClopotel);
             DeleteLists();
             DayManager.numOrders++;
             if(DayManager.numOrders != DayManager.maxOrders)
