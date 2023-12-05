@@ -22,12 +22,37 @@ public class Produce : MonoBehaviour
     public GameObject slider;
     bool faceMancare;
 
+    [HideInInspector]
+    public bool timerI;
+    [HideInInspector]
+    public bool timerII;
+    [HideInInspector]
+    public bool timerIII;
+
+    [HideInInspector]
+    public bool fireI;
+    [HideInInspector]
+    public bool fireII;
+    [HideInInspector]
+    public bool fireIII;
+
     void Awake()
     {
         if(CO2 == null) CO2 = GameObject.Find("bucatarAsamblare/extinctor (1)/particule");
         if(ext == null) ext = GameObject.Find("suport").GetComponent<Extinctor>();
         if(player == null) player = GameObject.Find("bucatarAsamblare");
         timer=2;
+    }
+
+    public void SetUpgrades()
+    {
+        if(timerI) timer=1.75f;
+        if(timerII) timer=1.5f;
+        if(timerIII) timer=1.25f;
+
+        if(fireI) chanceToFire=15;
+        if(fireII) chanceToFire=17;
+        if(fireIII) chanceToFire=20;
     }
 
     void OnMouseUp()
