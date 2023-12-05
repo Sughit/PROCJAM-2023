@@ -17,6 +17,8 @@ public class DayManager : MonoBehaviour
     public List<Item> ingredients = new List<Item>();
 
     public GenerateOrder generateOrder;
+    public Text text;
+    public Text text2;
 
     void Awake()
     {
@@ -45,6 +47,10 @@ public class DayManager : MonoBehaviour
             }
         }
 
+        text.text = (numDay+1).ToString();
+        text2.text = "Day " +numDay.ToString()+ " ended";
+
+
     }
 
     void EndDay()
@@ -60,6 +66,12 @@ public class DayManager : MonoBehaviour
         Time.timeScale=1;
         GenerateOrder.instance.currentTimeToNewOrder = GenerateOrder.instance.timeToNewOrder;
         dayMenu.SetActive(false);
+        Produce[] prod = FindObjectsOfType<Produce>();
+        foreach (var nume in prod)
+        {
+            nume.canTake = false;
+            nume.productGO.SetActive(false);
+        }
         StartCoroutine(Transition());
     }
 

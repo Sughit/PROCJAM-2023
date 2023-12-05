@@ -15,6 +15,7 @@ public class MoneyScript : MonoBehaviour
     public Text totalMoneyText;
     public Text moneyMadeText;
     public Text lostMoneyText;
+    public Text text;
 
     #region Singleton
 
@@ -49,5 +50,9 @@ public class MoneyScript : MonoBehaviour
         lostMoney=0;
         correctOrders=0;
         incorrectOrders=0;
+    }
+    void Update()
+    {
+        text.text = money.ToString();
     }
 }
