@@ -34,10 +34,13 @@ public class GenerateOrder : MonoBehaviour
     public float timeToNewOrder;
     [HideInInspector]
     public float currentTimeToNewOrder;
+    public GameObject slider;
 
     void Start()
     {
         currentTimeToNewOrder = timeToNewOrder;
+        slider.GetComponent<SliderOrder>().gameTime = timeToNewOrder;
+        slider.GetComponent<SliderOrder>().StartTimer();
         MakeOrder();
     }
 
@@ -50,12 +53,15 @@ public class GenerateOrder : MonoBehaviour
             currentOrder.Clear();
             if(onOrderChangedCallback != null)
                 onOrderChangedCallback.Invoke();
+            slider.GetComponent<SliderOrder>().gameTime = timeToNewOrder;
+            slider.GetComponent<SliderOrder>().StartTimer();
             MakeOrder();
         }
         else
         {
             currentTimeToNewOrder -= Time.deltaTime;
         }
+        slider.GetComponent<SliderOrder>().gameTime = currentTimeToNewOrder;
     }
 
     public void MakeOrder()
@@ -77,6 +83,7 @@ public class GenerateOrder : MonoBehaviour
 
         if(onOrderChangedCallback != null)
             onOrderChangedCallback.Invoke();
+
     }
 
     public void RemoveItems(Item item)
