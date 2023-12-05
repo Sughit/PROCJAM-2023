@@ -38,6 +38,7 @@ public class DayManager : MonoBehaviour
         if(numOrders == maxOrders)
         {
             EndDay();
+            Time.timeScale=0;
             if(numDay % 3 == 0)
             {
                 maxOrders++;
@@ -56,6 +57,8 @@ public class DayManager : MonoBehaviour
 
     public void NextDay()
     {
+        Time.timeScale=1;
+        GenerateOrder.instance.currentTimeToNewOrder = GenerateOrder.instance.timeToNewOrder;
         dayMenu.SetActive(false);
         StartCoroutine(Transition());
     }

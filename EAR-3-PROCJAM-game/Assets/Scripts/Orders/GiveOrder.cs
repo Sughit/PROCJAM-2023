@@ -37,6 +37,7 @@ public class GiveOrder : Interactable
             if(DayManager.numOrders != DayManager.maxOrders)
             {
                 generateOrder.MakeOrder();
+                generateOrder.currentTimeToNewOrder = generateOrder.timeToNewOrder;
             }
         }
         else
@@ -45,6 +46,7 @@ public class GiveOrder : Interactable
             MoneyScript.incorrectOrders++;
             DeleteLists();
             generateOrder.MakeOrder();
+            generateOrder.currentTimeToNewOrder = generateOrder.timeToNewOrder;
         }
     }
 

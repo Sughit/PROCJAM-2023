@@ -31,14 +31,36 @@ public class GenerateOrder : MonoBehaviour
     public int minItems;
     public int maxItems;
 
+    public float timeToNewOrder;
+    [HideInInspector]
+    public float currentTimeToNewOrder;
+
     void Start()
     {
+        currentTimeToNewOrder = timeToNewOrder;
         MakeOrder();
+    }
+
+    void Update()
+    {
+        if(currentTimeToNewOrder <= 0)
+        {
+            currentTimeToNewOrder = timeToNewOrder;
+            MoneyScript.incorrectOrders++;
+            currentOrder.Clear();
+            if(onOrderChangedCallback != null)
+                onOrderChangedCallback.Invoke();
+            MakeOrder();
+        }
+        else
+        {
+            currentTimeToNewOrder -= Time.deltaTime;
+        }
     }
 
     public void MakeOrder()
     {
-        //seteaza minimul de ingresiente
+        //seteaza minimul de ingrediente
         for(int i = 0; i < minItems; i++)
         {
             currentOrder.Insert(i, totalItems[Random.Range(0, totalItems.Count)]);

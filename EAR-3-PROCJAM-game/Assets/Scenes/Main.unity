@@ -10474,6 +10474,8 @@ MonoBehaviour:
   currentOrder: []
   minItems: 2
   maxItems: 3
+  timeToNewOrder: 13
+  currentTimeToNewOrder: 0
 --- !u!114 &2015133728
 MonoBehaviour:
   m_ObjectHideFlags: 0
