@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277a1833819dc69408308f8499c3e50e, type: 3}
   m_Name: carrotChef
   m_EditorClassIdentifier: 
-  Name: carrotChef
-  timeToCook: 2
+  Name: workStationCarrot
   icon: {fileID: 21300000, guid: 97955ff8c771cb14a852e1d7ac7c5cd3, type: 3}

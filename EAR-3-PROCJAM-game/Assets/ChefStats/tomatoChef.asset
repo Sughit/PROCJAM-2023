@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277a1833819dc69408308f8499c3e50e, type: 3}
   m_Name: tomatoChef
   m_EditorClassIdentifier: 
-  Name: tomatoChef
-  timeToCook: 2
+  Name: workStationTomato
   icon: {fileID: 21300000, guid: ba2e1cfe554a8fa45868901c4fb037c6, type: 3}

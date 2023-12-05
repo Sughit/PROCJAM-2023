@@ -16,12 +16,23 @@ public class UpgradeSlot : MonoBehaviour
         icon.enabled = true;
     }
 
-    public void UpgradeChef()
+    public void UpgradeTimer()
     {
         if(chef != null)
         {
-            Debug.Log("Upgrade " + chef.Name);
-            chef.timeToCook = 1;
+            Debug.Log("Upgrade " + chef.Name + " work rate");
+            Produce script=GameObject.Find($"mobilaTest/{chef.Name}").GetComponent<Produce>();
+            script.timer=1;
+        }
+    }
+
+    public void UpgradeFire()
+    {
+        if(chef != null)
+        {
+            Debug.Log("Upgrade " + chef.Name + " fire chance");
+            Produce script=GameObject.Find($"mobilaTest/{chef.Name}").GetComponent<Produce>();
+            script.chanceToFire = 15;
         }
     }
 

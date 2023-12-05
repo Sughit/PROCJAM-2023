@@ -3,6 +3,5 @@ using UnityEngine;
 public class ChefStats : ScriptableObject
 {
     public string Name;
-    public float timeToCook = 2;
     public Sprite icon;
 }

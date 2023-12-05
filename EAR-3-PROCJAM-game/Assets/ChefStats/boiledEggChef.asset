@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277a1833819dc69408308f8499c3e50e, type: 3}
   m_Name: boiledEggChef
   m_EditorClassIdentifier: 
-  Name: boiledEggChef
-  timeToCook: 2
+  Name: workStationBoiledEgg
   icon: {fileID: 21300000, guid: 46b2e26f970a0194e994445ff623a7ca, type: 3}

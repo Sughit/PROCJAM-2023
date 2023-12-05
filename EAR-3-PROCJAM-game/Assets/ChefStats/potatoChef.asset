@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277a1833819dc69408308f8499c3e50e, type: 3}
   m_Name: potatoChef
   m_EditorClassIdentifier: 
-  Name: potatoChef
-  timeToCook: 2
+  Name: workStationPotato
   icon: {fileID: 21300000, guid: 76b56fbae114a3d4fb7801a5b821bd32, type: 3}

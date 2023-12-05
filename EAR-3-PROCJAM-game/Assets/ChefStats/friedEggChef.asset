@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277a1833819dc69408308f8499c3e50e, type: 3}
   m_Name: friedEggChef
   m_EditorClassIdentifier: 
-  Name: friedEggChef
-  timeToCook: 2
+  Name: workStationFriedEgg
   icon: {fileID: 21300000, guid: 63fa670bc50ce3545ba78ffff4b93dba, type: 3}
