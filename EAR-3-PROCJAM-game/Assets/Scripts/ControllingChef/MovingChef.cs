@@ -9,6 +9,7 @@ public class MovingChef : MonoBehaviour
     NavMeshAgent agent;
     Transform target;
     public Animator anim;
+    public GameObject particule;
 
     void Start()
     {
@@ -23,9 +24,15 @@ public class MovingChef : MonoBehaviour
             FaceTarget();
         }
         if(agent.velocity.magnitude <1f)
+        {
             anim.SetBool("mers", false);
+            particule.SetActive(false);
+        }    
         else
+        {
             anim.SetBool("mers", true);
+            particule.SetActive(true);
+        }    
 
     }
 
