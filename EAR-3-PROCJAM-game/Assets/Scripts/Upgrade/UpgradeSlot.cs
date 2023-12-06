@@ -72,7 +72,7 @@ public class UpgradeSlot : MonoBehaviour
                 if(MoneyScript.money >= 5)
                 {
                     script.fireI=true;
-                    timerText.text="10";
+                    fireText.text="10";
                     MoneyScript.money -= 5;
                 }
             }

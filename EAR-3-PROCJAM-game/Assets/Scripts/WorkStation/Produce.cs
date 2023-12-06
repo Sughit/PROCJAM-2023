@@ -12,7 +12,8 @@ public class Produce : MonoBehaviour
     public bool canTake;
     public Animator anim;
     public GameObject foc;
-    bool onFire;
+    [HideInInspector]
+    public bool onFire;
     public static bool extinguishing;
     int x;
     public GameObject CO2;
@@ -20,7 +21,8 @@ public class Produce : MonoBehaviour
     public int chanceToFire = 12;
     public GameObject player;
     public GameObject slider;
-    bool faceMancare;
+    [HideInInspector]
+    public bool faceMancare;
 
     [HideInInspector]
     public bool timerI;
@@ -96,7 +98,7 @@ public class Produce : MonoBehaviour
             }
     }
 
-    IEnumerator MakeProductTimer()
+    public IEnumerator MakeProductTimer()
     {
         mancareSFX.SetActive(true);
         faceMancare = true;

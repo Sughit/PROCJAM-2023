@@ -424,6 +424,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5793834421910966754}
+  - component: {fileID: 7152007049854462540}
   m_Layer: 0
   m_Name: dulap_raft
   m_TagString: Untagged
@@ -438,7 +439,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6569631562296413016}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.71, y: -0.00000047683716, z: -3.856}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_ConstrainProportionsScale: 0
@@ -453,6 +454,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &7152007049854462540
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6569631562296413016}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.46}
+  m_TimeToStationary: 0.5
 --- !u!1 &8862475267164810684
 GameObject:
   m_ObjectHideFlags: 0

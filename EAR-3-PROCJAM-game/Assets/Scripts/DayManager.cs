@@ -41,7 +41,7 @@ public class DayManager : MonoBehaviour
         {
             EndDay();
             Time.timeScale=0;
-            if(numDay % 3 == 0)
+            if(numDay % 2 == 0)
             {
                 maxOrders++;
             }
@@ -55,6 +55,19 @@ public class DayManager : MonoBehaviour
 
     void EndDay()
     {
+        Produce[] prod = FindObjectsOfType<Produce>();
+        foreach (var nume in prod)
+        {
+            nume.canTake = false;
+            nume.productGO.SetActive(false);
+            nume.onFire=false;
+            nume.foc.SetActive(false);
+            nume.anim.SetBool("luatFoc", false);
+            nume.focSFX.SetActive(false);
+            nume.finishSFX.SetActive(false);
+            nume.mancareSFX.SetActive(false);
+            nume.faceMancare=false;
+        }
         dayMenu.SetActive(true);
         numOrders = 0;
         numDay++;
@@ -66,12 +79,6 @@ public class DayManager : MonoBehaviour
         Time.timeScale=1;
         GenerateOrder.instance.currentTimeToNewOrder = GenerateOrder.instance.timeToNewOrder;
         dayMenu.SetActive(false);
-        Produce[] prod = FindObjectsOfType<Produce>();
-        foreach (var nume in prod)
-        {
-            nume.canTake = false;
-            nume.productGO.SetActive(false);
-        }
         StartCoroutine(Transition());
     }
 
@@ -82,7 +89,7 @@ public class DayManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         chefs[numDay-1].SetActive(true);
         generateOrder.totalItems.Add(ingredients[numDay-1]);
-        Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
+        if(numDay-1 <= chefs.Count) Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
         GetComponent<GenerateOrder>().MakeOrder();
         MoneyScript.instance.Reset();
         //SceneManager.LoadScene("Main");

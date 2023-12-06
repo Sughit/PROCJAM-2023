@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3413814135635930406}
   - component: {fileID: 2948437890665547981}
   - component: {fileID: 2948437890665547982}
+  - component: {fileID: 7944089452961158165}
   m_Layer: 0
   m_Name: suport
   m_TagString: Untagged
@@ -49,7 +50,7 @@ CapsuleCollider:
   m_Radius: 0.29639906
   m_Height: 1.7275243
   m_Direction: 1
-  m_Center: {x: 0.04153925, y: 0.3637638, z: 0.028106093}
+  m_Center: {x: 0.04153925, y: 0.3637638, z: -0.1}
 --- !u!114 &2948437890665547982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,6 +69,23 @@ MonoBehaviour:
   potiLuaExt: 1
   ext: {fileID: 5470874545376668542}
   ext2: {fileID: 0}
+  pickUpSFX: {fileID: 4450701623362884885, guid: d983c8517e443114ea537d9b5bee234c, type: 3}
+--- !u!208 &7944089452961158165
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2606349922743170972}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.01, y: 1, z: 0.01}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.06}
+  m_TimeToStationary: 0.5
 --- !u!1 &2948437891042160308
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +294,10 @@ PrefabInstance:
     - target: {fileID: 1665315723654622109, guid: 2effce9bfdf0caf46999f7b18c201497, type: 3}
       propertyPath: m_Name
       value: extinctor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1665315723654622109, guid: 2effce9bfdf0caf46999f7b18c201497, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2042298315319423271, guid: 2effce9bfdf0caf46999f7b18c201497, type: 3}
       propertyPath: m_RootOrder
