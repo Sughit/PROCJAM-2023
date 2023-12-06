@@ -10,6 +10,7 @@ public class MovingChef : MonoBehaviour
     Transform target;
     public Animator anim;
     public GameObject particule;
+    public GameObject mersSFX;
 
     void Start()
     {
@@ -27,11 +28,13 @@ public class MovingChef : MonoBehaviour
         {
             anim.SetBool("mers", false);
             particule.SetActive(false);
+            mersSFX.SetActive(false);
         }    
         else
         {
             anim.SetBool("mers", true);
             particule.SetActive(true);
+            mersSFX.SetActive(true);
         }    
 
     }
