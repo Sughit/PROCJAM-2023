@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         StartCoroutine(Timp());
     }
 
-    IEnumerator Timp()
+    public IEnumerator Timp()
     {
         stopTimer = false;
         timerSlider.maxValue = gameTime;

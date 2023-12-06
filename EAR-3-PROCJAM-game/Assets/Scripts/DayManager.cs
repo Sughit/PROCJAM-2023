@@ -20,6 +20,8 @@ public class DayManager : MonoBehaviour
     public Text text;
     public Text text2;
 
+    public static bool dayStarted;
+
     void Awake()
     {
         GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
@@ -33,10 +35,12 @@ public class DayManager : MonoBehaviour
 
         if(dayMenu == null) dayMenu = GameObject.Find("Canvas/dayMenu");
         if(transition == null) transition = GameObject.Find("Canvas/transition");
+        dayStarted=false;
     }
 
     void Update()
     {
+        if(numOrders==1) dayStarted=false;
         if(numOrders == maxOrders)
         {
             EndDay();
@@ -49,8 +53,6 @@ public class DayManager : MonoBehaviour
 
         text.text = (numDay+1).ToString();
         text2.text = "Day " +numDay.ToString()+ " ended";
-
-
     }
 
     void EndDay()
@@ -58,6 +60,8 @@ public class DayManager : MonoBehaviour
         Produce[] prod = FindObjectsOfType<Produce>();
         foreach (var nume in prod)
         {
+            StopCoroutine(nume.MakeProductTimer());
+            nume.anim.SetBool("laMunca", false);
             nume.canTake = false;
             nume.productGO.SetActive(false);
             nume.onFire=false;
@@ -66,7 +70,14 @@ public class DayManager : MonoBehaviour
             nume.focSFX.SetActive(false);
             nume.finishSFX.SetActive(false);
             nume.mancareSFX.SetActive(false);
-            nume.faceMancare=false;
+            nume.faceMancare=false; 
+        }
+        Timer[] sliders = FindObjectsOfType<Timer>();
+        foreach(var slider in sliders)
+        {
+            slider.gameTime=0;
+            StopCoroutine(slider.Timp());
+
         }
         dayMenu.SetActive(true);
         numOrders = 0;
@@ -80,6 +91,7 @@ public class DayManager : MonoBehaviour
         GenerateOrder.instance.currentTimeToNewOrder = GenerateOrder.instance.timeToNewOrder;
         dayMenu.SetActive(false);
         StartCoroutine(Transition());
+        dayStarted=true;
     }
 
     IEnumerator Transition()
@@ -93,5 +105,7 @@ public class DayManager : MonoBehaviour
         GetComponent<GenerateOrder>().MakeOrder();
         MoneyScript.instance.Reset();
         //SceneManager.LoadScene("Main");
+        yield return new WaitForSeconds(1.99f);
+        dayStarted=false;
     }
 }

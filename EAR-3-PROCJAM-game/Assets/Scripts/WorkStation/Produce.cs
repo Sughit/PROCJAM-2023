@@ -42,6 +42,9 @@ public class Produce : MonoBehaviour
     public GameObject finishSFX;
     public GameObject mancareSFX;
 
+    [HideInInspector]
+    public Coroutine timerCo;
+
     void Awake()
     {
         if(CO2 == null) CO2 = GameObject.Find("bucatarAsamblare/extinctor (1)/particule");
@@ -108,11 +111,14 @@ public class Produce : MonoBehaviour
         mancareSFX.SetActive(false);
         if(x != 1)
         {
-            productGO.SetActive(true);
-            canTake = true;
-            anim.SetBool("laMunca", false);
-            Debug.Log("Finished");
-            Instantiate(finishSFX);
+            if(!DayManager.dayStarted)
+            {
+                productGO.SetActive(true);
+                canTake = true;
+                anim.SetBool("laMunca", false);
+                Debug.Log("Finished");
+                Instantiate(finishSFX);
+            }
         }
         else
         {
