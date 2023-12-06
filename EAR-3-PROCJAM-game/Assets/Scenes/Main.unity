@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10185,6 +10185,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1213981375}
     m_Modifications:
+    - target: {fileID: 7365700703669586306, guid: 11422d12ad624f54f82e965a78eb59d0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8702972305264647858, guid: 11422d12ad624f54f82e965a78eb59d0, type: 3}
       propertyPath: m_Name
       value: workStationMeat
@@ -22591,7 +22595,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8600215572594535900, guid: 52f79b202ab477640b318baa10262570, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.708
+      value: 1.693
       objectReference: {fileID: 0}
     - target: {fileID: 8600215572594535900, guid: 52f79b202ab477640b318baa10262570, type: 3}
       propertyPath: m_LocalRotation.w
