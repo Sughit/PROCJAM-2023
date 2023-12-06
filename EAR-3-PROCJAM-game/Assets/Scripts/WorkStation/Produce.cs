@@ -37,6 +37,8 @@ public class Produce : MonoBehaviour
     public bool fireIII;
     public GameObject focSFX;
     public GameObject extSFX;
+    public GameObject finishSFX;
+    public GameObject mancareSFX;
 
     void Awake()
     {
@@ -96,17 +98,19 @@ public class Produce : MonoBehaviour
 
     IEnumerator MakeProductTimer()
     {
+        mancareSFX.SetActive(true);
         faceMancare = true;
         x = Random.Range(0,chanceToFire);
         yield return new WaitForSeconds(timer);
         faceMancare = false;
+        mancareSFX.SetActive(false);
         if(x != 1)
         {
             productGO.SetActive(true);
             canTake = true;
             anim.SetBool("laMunca", false);
             Debug.Log("Finished");
-            //sunet finalizat
+            Instantiate(finishSFX);
         }
         else
         {

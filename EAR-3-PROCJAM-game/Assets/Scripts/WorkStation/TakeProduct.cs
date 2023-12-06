@@ -9,6 +9,8 @@ public class TakeProduct : Interactable
     [SerializeField]
     ChefInventory inventory;
 
+    public GameObject pickUpSFX;
+
     void Start()
     {
         produce = GetComponent<Produce>();
@@ -29,6 +31,7 @@ public class TakeProduct : Interactable
     {
         if(produce.canTake)
         {
+            Instantiate(pickUpSFX);
             inventory.Add(produce.product);
             produce.canTake = false;
             produce.productGO.SetActive(false);
