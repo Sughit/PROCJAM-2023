@@ -35,6 +35,8 @@ public class Produce : MonoBehaviour
     public bool fireII;
     [HideInInspector]
     public bool fireIII;
+    public GameObject focSFX;
+    public GameObject extSFX;
 
     void Awake()
     {
@@ -109,6 +111,7 @@ public class Produce : MonoBehaviour
         else
         {
             onFire = true;
+            focSFX.SetActive(true);
             foc.SetActive(true);
             anim.SetBool("luatFoc", true);
             anim.SetBool("laMunca", false);
@@ -120,6 +123,9 @@ public class Produce : MonoBehaviour
         player.GetComponent<ControllingChef>().SetFocus(this.GetComponent<TakeProduct>());
         CO2.SetActive(true);
         extinguishing = true;
+
+        focSFX.SetActive(false);
+        Instantiate(extSFX);
 
         yield return new WaitForSeconds(1);
         CO2.SetActive(false);
