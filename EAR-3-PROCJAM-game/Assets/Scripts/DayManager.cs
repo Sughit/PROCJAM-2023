@@ -24,14 +24,14 @@ public class DayManager : MonoBehaviour
 
     void Awake()
     {
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
+        // GameObject[] objs = GameObject.FindGameObjectsWithTag("GameManager");
 
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }
+        // if (objs.Length > 1)
+        // {
+        //     Destroy(this.gameObject);
+        // }
 
-        DontDestroyOnLoad(this.gameObject);
+        // DontDestroyOnLoad(this.gameObject);
 
         if(dayMenu == null) dayMenu = GameObject.Find("Canvas/dayMenu");
         if(transition == null) transition = GameObject.Find("Canvas/transition");
