@@ -987,7 +987,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 90
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -9500,7 +9500,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 90
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -23722,6 +23722,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 1057585160810153195}
   pauseMenu: {fileID: 1462368401}
+  askToContinue: {fileID: 2015133724}
+  howToPlay: {fileID: 2015133724}
 --- !u!1 &2018041687
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,9 +7,13 @@ public class MainMenuScript : MonoBehaviour
 {
     public GameObject transition;
     public GameObject pauseMenu;
+    public GameObject askToContinue;
+    public GameObject howToPlay;
+    bool sawTutorial;
 
     void Update()
     {
+        if(howToPlay.activeSelf && SceneManager.GetActiveScene().name == "MainMenu") sawTutorial=true;
         if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainMenu")
         {
             Time.timeScale=0;
@@ -33,6 +37,12 @@ public class MainMenuScript : MonoBehaviour
     public void Play()
     {
         StartCoroutine(Transition());
+    }
+
+    public void RegularPlay()
+    {
+        if(sawTutorial) Play();
+        else askToContinue.SetActive(true);
     }
 
     public void Quit()
