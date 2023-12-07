@@ -10,25 +10,37 @@ public class MainMenuScript : MonoBehaviour
     public GameObject askToContinue;
     public GameObject howToPlay;
     bool sawTutorial;
+    bool meniuDeschis;
+    public GameObject sunetGo;
+    public GameObject sunetPWRGo;
 
     void Update()
     {
         if(howToPlay.activeSelf && SceneManager.GetActiveScene().name == "MainMenu") sawTutorial=true;
-        if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainMenu")
+        if(Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name != "MainMenu" && !meniuDeschis)
         {
             Time.timeScale=0;
             pauseMenu.SetActive(true);
+            meniuDeschis = true;
+        }
+        else if(meniuDeschis && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Time.timeScale=1;
+            pauseMenu.SetActive(false);
+            meniuDeschis = false;
         }
     }
 
     public void ExitPause()
     {
+        meniuDeschis = false;
         pauseMenu.SetActive(false);
         Time.timeScale=1;
     }
 
     public void ToMenu()
     {
+        meniuDeschis = false;
         Time.timeScale=1;
         pauseMenu.SetActive(false);
         StartCoroutine(TransitionMenu());
@@ -43,6 +55,14 @@ public class MainMenuScript : MonoBehaviour
     {
         if(sawTutorial) Play();
         else askToContinue.SetActive(true);
+    }
+    public void Sunet()
+    {
+        Instantiate(sunetGo);
+    }
+    public void SunetPWR()
+    {
+        Instantiate(sunetPWRGo);
     }
 
     public void Quit()

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class DonDestroyOnLoad : MonoBehaviour
 {
@@ -18,4 +19,12 @@ public class DonDestroyOnLoad : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
     }
+    void Update()
+    {
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            DestroyImmediate(this.gameObject);
+        }
+    }
 }
+
