@@ -14,6 +14,7 @@ public class DayManager : MonoBehaviour
     public GameObject transition;
 
     public List<GameObject> chefs = new List<GameObject>();
+    public List<GameObject> instructions = new List<GameObject>();
     public List<Item> ingredients = new List<Item>();
 
     public GenerateOrder generateOrder;
@@ -36,6 +37,19 @@ public class DayManager : MonoBehaviour
         if(dayMenu == null) dayMenu = GameObject.Find("Canvas/dayMenu");
         if(transition == null) transition = GameObject.Find("Canvas/transition");
         dayStarted=false;
+        
+    }
+
+    public void ReactivateTime()
+    {
+        Time.timeScale=1;
+    }
+
+    IEnumerator Start()
+    {
+        instructions[0].SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale=0;
     }
 
     void Update()
@@ -101,13 +115,16 @@ public class DayManager : MonoBehaviour
         Animator transitionAnim=transition.GetComponent<Animator>();
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
-        chefs[numDay-1].SetActive(true);
+        if(numDay-1 <= chefs.Count) chefs[numDay-1].SetActive(true);
+        if(numDay-1 <= chefs.Count) instructions[numDay].SetActive(true);
         generateOrder.totalItems.Add(ingredients[numDay-1]);
         if(numDay-1 <= chefs.Count) Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
         GetComponent<GenerateOrder>().MakeOrder();
         MoneyScript.instance.Reset();
+        yield return new WaitForSeconds(0.5f);
+        Time.timeScale=0;
         //SceneManager.LoadScene("Main");
-        yield return new WaitForSeconds(1.99f);
+        yield return new WaitForSecondsRealtime(1.99f);
         dayStarted=false;
     }
 }
