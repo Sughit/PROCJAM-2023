@@ -79,6 +79,7 @@ public class DayManager : MonoBehaviour
             StopCoroutine(slider.Timp());
 
         }
+        GameObject.Find("bucatarAsamblare/mersSFX").GetComponent<AudioSource>().enabled=false;
         dayMenu.SetActive(true);
         numOrders = 0;
         numDay++;
@@ -92,6 +93,7 @@ public class DayManager : MonoBehaviour
         dayMenu.SetActive(false);
         StartCoroutine(Transition());
         dayStarted=true;
+        GameObject.Find("bucatarAsamblare/mersSFX").GetComponent<AudioSource>().enabled=true;
     }
 
     IEnumerator Transition()
