@@ -115,10 +115,14 @@ public class DayManager : MonoBehaviour
         Animator transitionAnim=transition.GetComponent<Animator>();
         transitionAnim.SetTrigger("trans");
         yield return new WaitForSeconds(0.5f);
-        if(numDay-1 <= chefs.Count) chefs[numDay-1].SetActive(true);
-        if(numDay-1 <= chefs.Count) instructions[numDay].SetActive(true);
-        generateOrder.totalItems.Add(ingredients[numDay-1]);
-        if(numDay-1 <= chefs.Count) Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
+        if(numDay-1 < chefs.Count) 
+        {
+            chefs[numDay-1].SetActive(true);
+            instructions[numDay].SetActive(true);
+            generateOrder.totalItems.Add(ingredients[numDay-1]);
+            Upgrade.instance.Add(chefs[numDay-1].GetComponent<Produce>().chefStats);
+        }
+        else Time.timeScale = 1;
         GetComponent<GenerateOrder>().MakeOrder();
         MoneyScript.instance.Reset();
         yield return new WaitForSeconds(0.5f);

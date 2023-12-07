@@ -23,9 +23,12 @@ public class FinishOrder : MonoBehaviour
         if(order.Count != inventory.Count)
             correctOrder = false;
 
-        for(int i = 0; i < order.Count; i++)
+        if(order.Count == inventory.Count)
         {
-            if(order[i] != inventory[i]) correctOrder = false;
+            for(int i = 0; i < order.Count; i++)
+            {
+                if(order[i] != inventory[i]) correctOrder = false;
+            }
         }
 
         return correctOrder;
