@@ -8,7 +8,7 @@ public class DayManager : MonoBehaviour
 {
     public static int maxOrders = 3;
     public static int numOrders;
-    public static int numDay=6;
+    public static int numDay=0;
 
     public GameObject dayMenu;
     public GameObject transition;
@@ -64,9 +64,9 @@ public class DayManager : MonoBehaviour
                 maxOrders++;
             }
         }
-
         text.text = (numDay+1).ToString();
         text2.text = "Day " +numDay.ToString()+ " ended";
+
     }
 
     void EndDay()
