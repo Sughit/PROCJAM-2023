@@ -8,7 +8,7 @@ public class DayManager : MonoBehaviour
 {
     public static int maxOrders = 3;
     public static int numOrders;
-    public static int numDay;
+    public static int numDay=6;
 
     public GameObject dayMenu;
     public GameObject transition;
@@ -49,7 +49,7 @@ public class DayManager : MonoBehaviour
     {
         instructions[0].SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale=0;
+        if(numDay - 1>= chefs.Count) Time.timeScale=0;
     }
 
     void Update()
@@ -126,7 +126,14 @@ public class DayManager : MonoBehaviour
         GetComponent<GenerateOrder>().MakeOrder();
         MoneyScript.instance.Reset();
         yield return new WaitForSeconds(0.5f);
-        Time.timeScale=0;
+        if(numDay -1 >= chefs.Count)
+        {
+            Time.timeScale=1;
+        }
+        else
+        {
+            Time.timeScale=0;
+        }
         //SceneManager.LoadScene("Main");
         yield return new WaitForSecondsRealtime(1.99f);
         dayStarted=false;
