@@ -49,7 +49,7 @@ public class DayManager : MonoBehaviour
     {
         instructions[0].SetActive(true);
         yield return new WaitForSeconds(0.5f);
-        if(numDay - 1>= chefs.Count) Time.timeScale=0;
+        /*if(numDay - 1>= chefs.Count) */Time.timeScale=0;
     }
 
     void Update()

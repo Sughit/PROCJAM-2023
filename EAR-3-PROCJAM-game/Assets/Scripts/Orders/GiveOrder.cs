@@ -19,9 +19,12 @@ public class GiveOrder : Interactable
     {
         base.Interact();
 
-        Give();
-        Instantiate(sunetClopotel);
-        anim.SetTrigger("clopotel");
+        if(ChefInventory.instance.items.Count != 0)
+        {
+            Give();
+            Instantiate(sunetClopotel);
+            anim.SetTrigger("clopotel");
+        }
     }
 
     void Give()
